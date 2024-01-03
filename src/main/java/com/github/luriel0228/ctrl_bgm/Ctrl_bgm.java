@@ -39,7 +39,7 @@ public final class Ctrl_bgm extends JavaPlugin {
     }
 
     private void registerEvents() {
-        getServer().getPluginManager().registerEvents(new BgmOnJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new BgmOnJoinListener(this), this);
     }
 
 }

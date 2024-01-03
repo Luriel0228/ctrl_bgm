@@ -12,9 +12,9 @@ public class BgmOnJoinListener implements Listener {
 
         if (DataFile.getBgmData(event.getPlayer())) {
             DataFile.setBgmData(event.getPlayer(), true);
-            event.getPlayer().playSound(event.getPlayer().getLocation(), "minecraft.bgm", 1, 1);
+            event.getPlayer().playSound(event.getPlayer().getLocation(), "minecraft:bgm", 1, 1);
         } else {
-            event.getPlayer().stopSound("minecraft.bgm");
+            event.getPlayer().stopSound("minecraft:bgm");
         }
 
     }

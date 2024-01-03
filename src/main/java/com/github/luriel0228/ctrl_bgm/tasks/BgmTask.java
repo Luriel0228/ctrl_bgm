@@ -25,12 +25,25 @@ public class BgmTask {
                 @Override
                 public void run() {
                     if (DataFile.getBgmData(player)) {
-                        player.playSound(player, "minecraft.bgm", 1, 1);
+                        player.playSound(player.getLocation(), "minecraft:bgm", 1, 1);
                     }
                 }
             }.runTaskTimer(plugin, 0, 20 * 60);
 
             playerTasks.put(player, task);
+        } else {
+            BukkitTask existingTask = playerTasks.get(player);
+            existingTask.cancel();
+            BukkitTask newTask = new BukkitRunnable() {
+                @Override
+                public void run() {
+                    if (DataFile.getBgmData(player)) {
+                        player.playSound(player.getLocation(), "minecraft:bgm", 1, 1);
+                    }
+                }
+            }.runTaskTimer(plugin, 0, 20 * 60);
+
+            playerTasks.put(player, newTask);
         }
     }
 

@@ -43,11 +43,11 @@ public class BgmCommand implements CommandExecutor {
             DataFile.setBgmData(player, false);
             player.sendMessage(Message.getInstance().getMessage(MessageKey.SUCCESS_ON));
             bgmTask.startTask(player);
-            player.playSound(player, "minecraft.bgm", 1, 1);
+            player.playSound(player, "minecraft:bgm", 1, 1);
         } else {
             DataFile.setBgmData(player, true);
             player.sendMessage(Message.getInstance().getMessage(MessageKey.SUCCESS_OFF));
-            player.stopSound("minecraft.bgm");
+            player.stopSound("minecraft:bgm");
             bgmTask.stopTask(player);
         }
     }

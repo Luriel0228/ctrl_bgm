@@ -9,15 +9,18 @@ import com.github.luriel0228.ctrl_bgm.tasks.BgmTask;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class BgmCommand implements CommandExecutor {
 
     private final Ctrl_bgm plugin;
     private final BgmTask bgmTask;
+    private final FileConfiguration config;
 
     public BgmCommand(Ctrl_bgm plugin) {
         this.plugin = plugin;
+        this.config = plugin.getConfig();
         this.bgmTask = new BgmTask(plugin);
     }
 
@@ -46,7 +49,7 @@ public class BgmCommand implements CommandExecutor {
         } else {
             DataFile.setBgmData(player, false);
             player.sendMessage(Message.getInstance().getMessage(MessageKey.SUCCESS_OFF));
-            player.stopSound("minecraft:bgm");
+            player.stopSound(config.getString("bgm_name"));
             bgmTask.stopTask(player);
         }
     }

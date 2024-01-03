@@ -12,7 +12,6 @@ public final class Ctrl_bgm extends JavaPlugin {
 
     public FileConfiguration config;
     public DataFile dataFile;
-    private BgmTask bgmTask;
 
     @Override
     public void onEnable() {

@@ -3,6 +3,7 @@ normal:
   prefix: "&6[ BGM ] "
   # config를 리로드 했을 때 출력됨
   reload_config: "&a콘피그를 리로드했습니다."
+  
 error:
   # 콘솔로 명령어를 입력했을 때 출력됨
   player_only: "&c플레이어만 입력이 가능한 명령어입니다."

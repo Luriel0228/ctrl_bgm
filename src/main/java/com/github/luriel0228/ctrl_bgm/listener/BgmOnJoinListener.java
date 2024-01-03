@@ -17,15 +17,10 @@ public class BgmOnJoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-
         if (DataFile.getBgmData(event.getPlayer())) {
             DataFile.setBgmData(event.getPlayer(), true);
-            event.getPlayer().playSound(event.getPlayer().getLocation(), "minecraft:bgm", 1, 1);
             bgmTask.startTask(event.getPlayer());
-        } else {
-            event.getPlayer().stopSound("minecraft:bgm");
         }
-
     }
 
 }

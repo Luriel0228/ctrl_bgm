@@ -1,3 +1,8 @@
 BgmPlugin:
   # 이 플러그인의 기능을 활성화할 것인지 조정합니다
   EnablePlugin: true
+
+  # 재생할 BGM의 이름을 설정합니다 (리소스팩의 경로를 입력)
+  bgm_name: "minecraft:bgm"
+  # BGM 루프 간격을 초 단위로 설정합니다
+  bgm_interval: 60

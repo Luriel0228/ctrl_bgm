@@ -19,14 +19,9 @@ public class MessageConfig {
             Ctrl_bgm.getPlugin(Ctrl_bgm.class).saveResource("message.yml", false);
         }
         messageConfig = YamlConfiguration.loadConfiguration(messageFile);
-        Message.instance = new Message(MessageConfig.messageConfig);
+        Message.instance = new Message();
     }
 
-
-
-    public static FileConfiguration getMessageConfig() {
-        return YamlConfiguration.loadConfiguration(messageFile);
-    }
 
     public static void reload() {
         try {

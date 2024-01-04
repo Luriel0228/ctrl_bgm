@@ -34,9 +34,10 @@ public class BgmCommand implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("reload")) {
             handleReloadCommand(player);
-        } else {
-            handleBgmCommand(player);
+            return true;
         }
+
+        handleBgmCommand(player);
 
         return false;
     }

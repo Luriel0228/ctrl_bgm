@@ -6,6 +6,7 @@ import com.github.luriel0228.ctrl_bgm.message.Message;
 import com.github.luriel0228.ctrl_bgm.message.MessageConfig;
 import com.github.luriel0228.ctrl_bgm.message.MessageKey;
 import com.github.luriel0228.ctrl_bgm.tasks.BgmTask;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,7 +33,7 @@ public class BgmCommand implements CommandExecutor {
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("reload")) {
+        if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
             handleReloadCommand(player);
             return true;
         }

@@ -3,10 +3,12 @@ package com.github.luriel0228.ctrl_bgm;
 import com.github.luriel0228.ctrl_bgm.commands.BgmCommand;
 import com.github.luriel0228.ctrl_bgm.datafile.DataFile;
 import com.github.luriel0228.ctrl_bgm.listener.BgmOnJoinListener;
+import com.github.luriel0228.ctrl_bgm.listener.BgmOnQuitListener;
 import com.github.luriel0228.ctrl_bgm.message.MessageConfig;
-import com.github.luriel0228.ctrl_bgm.tasks.BgmTask;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class Ctrl_bgm extends JavaPlugin {
 
@@ -34,11 +36,12 @@ public final class Ctrl_bgm extends JavaPlugin {
     }
 
     private void setExecutor() {
-        getCommand("bgm").setExecutor(new BgmCommand(this));
+        Objects.requireNonNull(getCommand("bgm")).setExecutor(new BgmCommand(this));
     }
 
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new BgmOnJoinListener(this), this);
+        getServer().getPluginManager().registerEvents(new BgmOnQuitListener(this), this);
     }
 
 }

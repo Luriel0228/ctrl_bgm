@@ -1,6 +1,7 @@
 package com.github.luriel0228.ctrl_bgm.tasks;
 
 import com.github.luriel0228.ctrl_bgm.datafile.DataFile;
+
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -14,7 +15,7 @@ public class BgmTask {
 
     private final Plugin plugin;
     private final Map<Player, BukkitTask> playerTasks;
-    private FileConfiguration config;
+    private final FileConfiguration config;
 
     public BgmTask(Plugin plugin) {
         config = plugin.getConfig();

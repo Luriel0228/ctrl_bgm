@@ -1,6 +1,7 @@
 package com.github.luriel0228.ctrl_bgm.message;
 
 import com.github.luriel0228.ctrl_bgm.Ctrl_bgm;
+
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 

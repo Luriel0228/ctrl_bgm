@@ -6,21 +6,21 @@ import com.github.luriel0228.ctrl_bgm.tasks.BgmTask;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class BgmOnJoinListener implements Listener {
+public class BgmOnQuitListener implements Listener {
 
     private final BgmTask bgmTask;
 
-    public BgmOnJoinListener(Ctrl_bgm plugin) {
+    public BgmOnQuitListener(Ctrl_bgm plugin) {
         this.bgmTask = new BgmTask(plugin);
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(PlayerQuitEvent event) {
         if (DataFile.getBgmData(event.getPlayer())) {
             DataFile.setBgmData(event.getPlayer(), true);
-            bgmTask.startTask(event.getPlayer());
+            bgmTask.stopTask(event.getPlayer());
         }
     }
 

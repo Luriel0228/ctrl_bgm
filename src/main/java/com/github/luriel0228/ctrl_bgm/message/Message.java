@@ -1,8 +1,10 @@
 package com.github.luriel0228.ctrl_bgm.message;
 
 import lombok.Getter;
+
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
+
 import java.util.HashMap;
 
 public class Message {

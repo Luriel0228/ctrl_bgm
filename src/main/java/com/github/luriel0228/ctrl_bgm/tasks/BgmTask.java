@@ -28,10 +28,10 @@ public class BgmTask {
                 @Override
                 public void run() {
                     if (DataFile.getBgmData(player)) {
-                        player.playSound(player.getLocation(), config.getString("bgm_name"), 1, 1);
+                        player.playSound(player, config.getString("BgmPlugin.bgm_name"), 1, 1);
                     }
                 }
-            }.runTaskTimer(plugin, 0, 20L * config.getInt("bgm_interval"));
+            }.runTaskTimer(plugin, 0, 20L * config.getInt("BgmPlugin.bgm_interval"));
 
             playerTasks.put(player, task);
         }

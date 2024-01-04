@@ -49,7 +49,7 @@ public class BgmCommand implements CommandExecutor {
         } else {
             DataFile.setBgmData(player, false);
             player.sendMessage(Message.getInstance().getMessage(MessageKey.SUCCESS_OFF));
-            player.stopSound(config.getString("bgm_name"));
+            player.stopSound(config.getString("BgmPlugin.bgm_name"));
             bgmTask.stopTask(player);
         }
     }

@@ -12,7 +12,7 @@ public class Message {
 
     public HashMap<MessageKey, String> messageMap;
 
-    public Message(FileConfiguration fileConfiguration) {
+    public Message() {
         FileConfiguration configuration = MessageConfig.messageConfig;
         messageMap = new HashMap<>();
 
